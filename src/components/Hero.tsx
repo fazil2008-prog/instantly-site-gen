@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+
 import { Sparkles, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-ai-generator.jpg";
 
