@@ -39,14 +39,17 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-[hsl(280,70%,65%)] text-primary-foreground hover:shadow-[var(--shadow-glow)] transition-all duration-300 px-8 py-6 text-lg font-semibold group">
-                Start Creating Free
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-[hsl(280,70%,65%)] text-primary-foreground hover:shadow-[var(--shadow-glow)] transition-all duration-300 px-8 py-6 text-lg font-semibold group">
+                <Link to="/auth">
+                  Start Creating Free
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:border-primary hover:bg-secondary transition-all duration-300 px-8 py-6 text-lg font-semibold">
-                See Examples
+              <Button asChild size="lg" variant="outline" className="border-2 border-primary/30 hover:border-primary hover:bg-secondary transition-all duration-300 px-8 py-6 text-lg font-semibold">
+                <Link to="/dashboard">See Examples</Link>
               </Button>
             </div>
+
 
             {/* Hero Image */}
             <div className="pt-12 px-4">
