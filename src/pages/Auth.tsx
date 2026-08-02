@@ -27,14 +27,15 @@ const Auth = () => {
     if (!loading && session) navigate("/dashboard", { replace: true });
   }, [loading, session, navigate]);
 
-  const validate = () => {
+  const validate = (): { email: string; password: string } | null => {
     const parsed = credentialsSchema.safeParse({ email, password });
     if (!parsed.success) {
       toast.error(parsed.error.issues[0].message);
       return null;
     }
-    return parsed.data;
+    return { email: parsed.data.email as string, password: parsed.data.password as string };
   };
+
 
   const handleSignIn = async (event: React.FormEvent) => {
     event.preventDefault();
